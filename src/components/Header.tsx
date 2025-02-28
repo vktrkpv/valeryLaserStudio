@@ -17,6 +17,11 @@ function Header() {
               </Link>
             </li>
             <li>
+            <Link to="/prices" className="text-black hover:text-[#8cd0cb]">
+                Prices
+              </Link>
+            </li>
+            <li>
               <Link to="/services" className="text-black hover:text-[#8cd0cb]">
                 Services
               </Link>

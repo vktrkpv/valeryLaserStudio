@@ -1,4 +1,5 @@
 import videoBg from '../assets/mainVideo2.mp4'
+import { Link } from 'react-router-dom';
 
 function VideoSection() {
     return(
@@ -15,7 +16,9 @@ function VideoSection() {
                 <p className="mt-4 text-lg drop-shadow-lg">Discover your beauty with us</p>
 
                 <div className="mt-6 flex space-x-4">
-                    <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">Prices and Services</button>
+                    <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">
+                        <Link to="/prices">Prices</Link>
+                    </button>
                     <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">Book Appointment</button>
                     <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">Contact Us</button>
 
