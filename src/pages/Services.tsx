@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import LaserHairRemovalTabs from '../components/services/LaserHairRemovalTabs';
-import BodyContouringTabs from '../components/services/BodyContouringTabs';
+import LaserHairRemovalTabs from '../components/services/tabs/LaserHairRemovalTabs';
+import BodyContouringTabs from '../components/services/tabs/BodyContouringTabs';
 
 export const mainTabs = [
-  { id: "laser", label: "Laser Hair Removal" },
-  { id: "skincare", label: "Skincare & Facials" },
-  { id: "body", label: "Body Contouring" },
+  { id: 'laser', label: 'Laser Hair Removal' },
+  { id: 'skincare', label: 'Skincare & Facials' },
+  { id: 'body', label: 'Body Contouring' },
 ];
 
 function Services() {
@@ -34,10 +34,9 @@ function Services() {
       </div>
 
       <div className="mt-6 p-4 bg-white shadow-md rounded-lg">
-        {activeTab === 'laser' && <LaserHairRemovalTabs/> }
-        {activeTab === "skincare" && <p>Skincare & Facials Content</p>}
-        {activeTab === "body" && <BodyContouringTabs />}
-
+        {activeTab === 'laser' && <LaserHairRemovalTabs />}
+        {activeTab === 'skincare' && <p>Skincare & Facials Content</p>}
+        {activeTab === 'body' && <BodyContouringTabs />}
       </div>
     </div>
   );
