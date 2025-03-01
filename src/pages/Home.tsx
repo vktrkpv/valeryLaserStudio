@@ -9,11 +9,14 @@ function Home() {
     <div>
         <VideoSection/>
         <AboutUs/>
+        
+        {/* <Services/>
         <Prices/>
 
-        {/* Bundles */}
+        Bundles */}
 
-        <Services/>
+        
+
         <Contacts/>
 
 

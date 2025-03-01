@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 
 function Header() {
   return (
-    <header className="bg-white shadow-md py-2 px-6 w-full">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md py-2 px-6 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/">
           <img src={logo} alt="Valery Laser Studio" className="h-12" />
