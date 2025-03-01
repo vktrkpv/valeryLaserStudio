@@ -37,6 +37,11 @@ function Header() {
               </Link>
             </li>
             <li>
+              <Link to="/whyus" className="text-black hover:text-[#8cd0cb]">
+                Why Us?
+              </Link>
+            </li>
+            <li>
               <Link to="/contacts" className="text-black hover:text-[#8cd0cb]">
                 Contacts
               </Link>

@@ -6,6 +6,7 @@ import Contacts from './pages/Contacts';
 import Header from './components/Header';
 import Prices from './pages/Prices';
 import AboutUs from './pages/AboutUs';
+import WhyUs from './pages/WhyUs';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           <Route path="aboutus" element={<AboutUs/> } />
           <Route path="prices" element={ <Prices/>} />
           <Route path="services" element={<Services />} />
+          <Route path="whyus" element={<WhyUs/>} />
           <Route path="contacts" element={<Contacts />} />
+
         </Routes>
       </Router>
 
