@@ -22,6 +22,11 @@ function Header() {
               </Link>
             </li>
             <li>
+              <Link to="/services" className="text-black hover:text-[#8cd0cb]">
+                Services
+              </Link>
+            </li>
+            <li>
             <Link to="/prices" className="text-black hover:text-[#8cd0cb]">
                 Prices
               </Link>
@@ -31,11 +36,7 @@ function Header() {
             Bundles
               </Link>
             </li>
-            <li>
-              <Link to="/services" className="text-black hover:text-[#8cd0cb]">
-                Services
-              </Link>
-            </li>
+            
             <li>
               <Link to="/whyus" className="text-black hover:text-[#8cd0cb]">
                 Why Us?

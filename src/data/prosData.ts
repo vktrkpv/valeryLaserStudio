@@ -14,11 +14,11 @@ export const prosData = [
       description:
         "Considering the treatment is only done once every 4-8 weeks, 15 minutes to an hour of time seems minimal when you consider the long-term results you will achieve.",
     },
-    {
-      title: "The treatment is 100% safe",
-      description:
-        "Many still speculate the safety of laser hair removal. This treatment was cleared by the FDA in the early 1990s and has grown in popularity since then. It is completely safe and only targets the hair follicle without affecting the surrounding skin or tissue.",
-    },
+    // {
+    //   title: "The treatment is 100% safe",
+    //   description:
+    //     "Many still speculate the safety of laser hair removal. This treatment was cleared by the FDA in the early 1990s and has grown in popularity since then. It is completely safe and only targets the hair follicle without affecting the surrounding skin or tissue.",
+    // },
     {
       title: "The treatment is quick",
       description:

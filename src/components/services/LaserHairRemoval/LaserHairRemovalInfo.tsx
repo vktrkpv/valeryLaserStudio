@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import laserPhoto from '../../../../assets/laserInfoMain.png'
-import ProsLaserHairRemoval from './ProsLaserHairremoval';
+import laserPhoto from '../../../assets/laserInfoMain.png'
+import ProsLaserHairRemoval from '../LaserHairRemoval/ProsLaserHairremoval';
 
 function LaserHairRemovalInfo() {
   return (
@@ -31,6 +31,12 @@ function LaserHairRemovalInfo() {
       <div className="mt-16">
         <ProsLaserHairRemoval />
       </div>
+
+      <div className="mt-16">
+        {/* Need more convincing? Laser Hair Removal…  */}
+      </div>
+
+
     </div>
   );
 }
