@@ -5,6 +5,7 @@ import LaserFirstRemoval from '../components/services/LaserHairRemoval/LaserFirs
 import LaserHowDoesWork from '../components/services/LaserHairRemoval/LaserHowDoesWork';
 import BodyMainInfo from '../components/services/Bodycontouring/BodyMainInfo';
 import BodyCavitation from '../components/services/Bodycontouring/BodyCavitation';
+import SkinCareAndFacials from '../components/services/Skincare/SkinCareAndFacials';
 
 const laserSubTabs = [
   {
@@ -49,8 +50,8 @@ function Services() {
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
               activeTab === 'laser'
-              ? 'bg-[#d0e4e4] text-black font-semibold shadow-md'
-                      : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#d0e4e4] hover:text-black hover:shadow-md'  
+                ? 'bg-[#d0e4e4] text-black font-semibold shadow-md'
+                : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#d0e4e4] hover:text-black hover:shadow-md'
             } cursor-pointer`}
             onClick={() => {
               setActiveTab('laser');
@@ -69,7 +70,7 @@ function Services() {
                   className={`px-6 py-3 rounded-lg transition-all duration-300 w-full ${
                     selectedLaserSubTab === tab.id
                       ? 'bg-[#A2DED0] text-black font-semibold shadow-md'
-                      : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#A2DED0] hover:text-black hover:shadow-md'                      
+                      : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#A2DED0] hover:text-black hover:shadow-md'
                   } cursor-pointer`}
                   key={tab.id}
                   onClick={() => {
@@ -106,10 +107,10 @@ function Services() {
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
               activeTab === 'body'
-              // ? 'bg-[#F5F5F5] text-gray-600 hover:bg-[#d0e4e4] hover:text-black hover:shadow-md'
-              //         : 'bg-[#d0e4e4] text-black font-semibold shadow-md'
+                ? // ? 'bg-[#F5F5F5] text-gray-600 hover:bg-[#d0e4e4] hover:text-black hover:shadow-md'
+                  //         : 'bg-[#d0e4e4] text-black font-semibold shadow-md'
 
-                ? 'bg-[#d0e4e4] text-black font-semibold shadow-md'
+                  'bg-[#d0e4e4] text-black font-semibold shadow-md'
                 : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#d0e4e4] hover:text-black hover:shadow-md'
             } cursor-pointer`}
             onClick={() => {
@@ -125,11 +126,11 @@ function Services() {
             <div className="absolute left-0 mt-2 rounded-lg w-full flex flex-col space-y-2 p-2 z-50">
               {bodySubTabs.map((tab) => (
                 <button
-                className={`px-6 py-3 rounded-lg transition-all duration-300 w-full ${
-                  selectedLaserSubTab === tab.id
+                  className={`px-6 py-3 rounded-lg transition-all duration-300 w-full ${
+                    selectedLaserSubTab === tab.id
                       ? 'bg-[#A2DED0] text-black font-semibold shadow-md'
-                      : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#A2DED0] hover:text-black hover:shadow-md'                     
-                } cursor-pointer`}
+                      : 'bg-[#F5F5F5] text-gray-600 hover:bg-[#A2DED0] hover:text-black hover:shadow-md'
+                  } cursor-pointer`}
                   onClick={() => {
                     setSelectedBodySubTab(tab.id);
                     setBodyDropdownOpen(false);
@@ -146,12 +147,24 @@ function Services() {
 
       <div className="mt-6 p-4 bg-white rounded-lg">
         {activeTab === 'laser' && (
-          <div>{laserSubTabs.find((tab) => tab.id === selectedLaserSubTab)?.component}</div>)}
-        {activeTab === 'skincare' && <p> БУДЕ КОМПОНЕНТ</p>}
-        {activeTab === 'body' && (
-          <div>{bodySubTabs.find((tab) => tab.id === selectedBodySubTab)?.component}</div>
+          <div>
+            {
+              laserSubTabs.find((tab) => tab.id === selectedLaserSubTab)
+                ?.component
+            }
+          </div>
         )}
-        
+
+        {activeTab === 'skincare' && <SkinCareAndFacials />}
+
+        {activeTab === 'body' && (
+          <div>
+            {
+              bodySubTabs.find((tab) => tab.id === selectedBodySubTab)
+                ?.component
+            }
+          </div>
+        )}
       </div>
     </div>
   );

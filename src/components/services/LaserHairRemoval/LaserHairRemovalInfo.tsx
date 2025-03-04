@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import laserPhoto from '../../../assets/laserInfoMain.png'
 import ProsLaserHairRemoval from '../LaserHairRemoval/ProsLaserHairremoval';
+import LaserConvincing from './LaserConvincing';
 
 function LaserHairRemovalInfo() {
   return (
@@ -33,7 +34,7 @@ function LaserHairRemovalInfo() {
       </div>
 
       <div className="mt-16">
-        {/* Need more convincing? Laser Hair Removal…  */}
+        <LaserConvincing/>
       </div>
 
 
