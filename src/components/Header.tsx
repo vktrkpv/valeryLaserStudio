@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import SearchBar from './SearchBar';
 
 function Header() {
   return (
@@ -49,6 +50,10 @@ function Header() {
             </li>
           </ul>
         </nav>
+
+        <div className="hidden md:block">
+          <SearchBar/>
+        </div>
 
         <div className="flex items-center space-x-4">
           <Link to="/login" className="text-black hover:text-[#8cd0cb] cursor-pointer">
