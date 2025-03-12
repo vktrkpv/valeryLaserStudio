@@ -3,7 +3,7 @@ import gridPhoto from '../assets/skinCare/1.png';
 
 function HomeGrid() {
   return (
-    <div className="grid grid-cols-3 gap-1 p-6 max-w-6xl mx-auto">
+    <div className="grid grid-cols-3 gap-1 p-6 max-w-6xl mx-auto px-6">
       <Link
         to="/prices"
         className="flex flex-col items-center justify-center bg-gradient-to-b from-[#d0e4e4] to-[#A2DED0] text-black text-xl font-semibold p-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl text-center"

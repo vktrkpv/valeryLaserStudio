@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+import GoogleReviews from "../components/GoogleReviews";
 import HomeGrid from "../components/HomeGrid";
 import VideoSection from "../components/VideoSection";
 import AboutUs from "./AboutUs";
@@ -11,17 +13,9 @@ function Home() {
         <VideoSection/>
         <AboutUs/>
         <HomeGrid/>
-        
-        {/* <Services/>
-        <Prices/>
-
-        Bundles */}
-
-        
-
         <Contacts/>
-
-
+        <GoogleReviews />
+        <Footer/>
     </div>
   )
 }

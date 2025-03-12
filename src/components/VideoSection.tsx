@@ -20,7 +20,11 @@ function VideoSection() {
                         <Link to="/prices">Prices</Link>
                     </button>
                     <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">Book Appointment</button>
-                    <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">Contact Us</button>
+                    <button className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black cursor-pointer">
+                        
+                        <Link to="/contacts">Contact Us</Link>
+
+                    </button>
 
                 </div>
             </div>
