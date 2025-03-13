@@ -1,6 +1,6 @@
 
 import { JSX } from "react"; 
-import LaserHairRemovalInfo from "../components/services/LaserHairRemoval/LaserHairRemovalInfo";
+// import LaserHairRemovalInfo from "../components/services/LaserHairRemoval/LaserHairRemovalInfo";
 
 
 export const servicesSearch: Service[] = [
