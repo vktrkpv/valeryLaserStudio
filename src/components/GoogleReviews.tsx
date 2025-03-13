@@ -3,8 +3,8 @@ import { TbUvIndex } from "react-icons/tb";
 
 function GoogleReviews() {
 
-    const PLACE_ID = "ChIJN1t_tDeuEmsRUsoyG83frY4";
-    const API_KEY = "AIzaSyD-vpW3xJmZZJxr5kD6xHzCqRoZghV1GAc";
+    const PLACE_ID = "ChIJ6ZEFKYAlWksRqULyA6u0CDk";
+    const API_KEY = "AIzaSyAvqCuEJIMyZjk6Q31Z7iF65409Rtm0QRY";
 
     const [reviews, setReviews] = useState([])
 
@@ -16,8 +16,9 @@ function GoogleReviews() {
                 ) 
                 const data = await response.json();
                 console.log(data)
+                setReviews(data);
             }
-            catch{
+            catch(err){
                 console.log("error")
             }
         };
@@ -31,8 +32,8 @@ function GoogleReviews() {
 
 {reviews.map((review, index) => (
     <div key={index}>
-        <h3 >{review.author_name}</h3>
-        <p>{review.text}</p>
+        {/* <h3 >{review.author_name}</h3>
+        <p>{review.text}</p> */}
     </div>
 
 ))}
