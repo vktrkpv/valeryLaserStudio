@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { skincareFacials } from '../../data/pricesData';
-import SkinCareAndFacials from '../services/Skincare/SkinCareAndFacials';
+// import SkinCareAndFacials from '../services/Skincare/SkinCareAndFacials';
 
 function SkincareFacials() {
   return (

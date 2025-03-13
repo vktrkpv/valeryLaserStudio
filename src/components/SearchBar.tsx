@@ -5,16 +5,16 @@ import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const filteredServices = servicesSearch.filter((service) =>
     service.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSelectService = (service: Service ) => {
-        setSearchTerm('');
-        // navigate(service.path);
-  }
+  // const handleSelectService = (service: Service ) => {
+  //       setSearchTerm('');
+  //       // navigate(service.path);
+  // }
 
   return (
     <div className="relative w-full max-w-md">
@@ -33,7 +33,7 @@ function SearchBar() {
               filteredServices.map((service) => (
                 <li
                 key={service.title}
-                onClick={() => handleSelectService(service) }
+                // onClick={() => handleSelectService(service) }
                  className="p-4 border-b last:border-0 cursor-pointer flex items-center space-x-4 bg-[#F5F5F5] hover:bg-[#A2DED0] hover:text-white rounded-lg transition-all duration-300">
                   {service.title}
                 </li>

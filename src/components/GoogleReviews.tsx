@@ -6,7 +6,7 @@ function GoogleReviews() {
     const PLACE_ID = "ChIJ6ZEFKYAlWksRqULyA6u0CDk";
     const API_KEY = "AIzaSyAvqCuEJIMyZjk6Q31Z7iF65409Rtm0QRY";
 
-    const [reviews, setReviews] = useState([])
+    // const [reviews, setReviews] = useState([])
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -16,7 +16,7 @@ function GoogleReviews() {
                 ) 
                 const data = await response.json();
                 console.log(data)
-                setReviews(data);
+                // setReviews(data);
             }
             catch(err){
                 console.log("error")
@@ -27,16 +27,16 @@ function GoogleReviews() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 ">
-<h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">What customers say about us:</h2>
+{/* <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">What customers say about us:</h2>
 <p>Based on {reviews.length} reviews !</p>
 
 {reviews.map((review, index) => (
     <div key={index}>
-        {/* <h3 >{review.author_name}</h3>
-        <p>{review.text}</p> */}
+        <h3 >{review.author_name}</h3>
+        <p>{review.text}</p>
     </div>
 
-))}
+))} */}
         </div>
 
     )
