@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TbUvIndex } from "react-icons/tb";
+// import { TbUvIndex } from "react-icons/tb";
 
 function GoogleReviews() {
 
