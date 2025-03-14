@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { servicesSearch, Service} from '../data/servicesSearchData';
-import { useNavigate } from 'react-router-dom';
+import { servicesSearch} from '../data/servicesSearchData';
+// import { useNavigate } from 'react-router-dom';
 
 
 function SearchBar() {
