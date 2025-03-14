@@ -18,7 +18,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="aboutus" className="text-black hover:text-[#8cd0cb]">
+              <Link to="/aboutus" className="text-black hover:text-[#8cd0cb]">
                 About Us
               </Link>
             </li>
@@ -59,6 +59,7 @@ function Header() {
           <Link to="/login" className="text-black hover:text-[#8cd0cb] cursor-pointer">
             Log In
           </Link>
+
           <Link
             to="/signup"
             className="text-black hover:text-[#8cd0cb] cursor-pointer"

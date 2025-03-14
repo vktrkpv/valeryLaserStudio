@@ -7,6 +7,9 @@ import Header from './components/Header';
 import Prices from './pages/Prices';
 import AboutUs from './pages/AboutUs';
 import WhyUs from './pages/WhyUs';
+import Login from './components/auth/LogIn';
+import SignUp from './components/auth/SignUp';
+import ResetPassword from './components/auth/ResetPassword';
 
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="whyus" element={<WhyUs/>} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path='login' element={<Login/>} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="reset-password" element={<ResetPassword />} />
           </Routes>
         </div>
       </Router>
