@@ -10,7 +10,9 @@ function VideoSection() {
             autoPlay
             muted
             playsInline 
-            loop />
+            loop
+            preload="auto"
+  crossOrigin="anonymous" />
 
             <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center mt-[-50px]">
                 <h1 className="text-4xl font-bold drop-shadow-lg">Welcome to Valery Laser Studio</h1>
