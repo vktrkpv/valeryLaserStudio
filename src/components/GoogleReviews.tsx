@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-// import { TbUvIndex } from "react-icons/tb";
+import { useEffect, useState } from "react";
+import { Loader } from "@googlemaps/js-api-loader";
 
 function GoogleReviews() {
 
@@ -12,7 +12,7 @@ function GoogleReviews() {
         const fetchReviews = async () => {
             try {
                 const response = await fetch(
-                    `https://maps.googleapis.com/maps/api/place/details/json?placeid=${PLACE_ID}&fields=reviews&key=${API_KEY}`
+                    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${API_KEY}`
                 ) 
                 const data = await response.json();
                 console.log(data)
