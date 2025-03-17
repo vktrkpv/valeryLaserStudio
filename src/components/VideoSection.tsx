@@ -9,6 +9,7 @@ function VideoSection() {
             src={videoBg}
             autoPlay
             muted
+            playsInline 
             loop />
 
             <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white text-center mt-[-50px]">
