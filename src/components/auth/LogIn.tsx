@@ -7,7 +7,20 @@ function Login() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email:', email, 'Password:', password);
+
+    if( email === mockAdmin.email && password === mockAdmin.password) {
+      localStorage.setItem("isAdminLoggedIn", "true");
+      window.location.href = "/admin";
+    }
+    else {
+      alert("Email or password is incorrect");
+    }
+    
+  };
+
+  const mockAdmin = {
+    email: "admin@example.com",
+    password: "admin123",
   };
 
   return (
