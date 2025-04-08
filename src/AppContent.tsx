@@ -18,7 +18,7 @@ import BookingCalendar from './components/dashboards/ADMIN/BookingCalendar';
 function AppContent(){
 
     const location = useLocation();
-    const shouldHideHeader = location.pathname.startsWith("/admin") || location.pathname === "/login";
+    const shouldHideHeader = location.pathname.startsWith("/admin");
 
 
     return(

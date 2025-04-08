@@ -11,16 +11,18 @@ function Login() {
     if( email === mockAdmin.email && password === mockAdmin.password) {
       localStorage.setItem("isAdminLoggedIn", "true");
       window.location.href = "/admin";
+      console.log("Logged in successfully!");
     }
     else {
       alert("Email or password is incorrect");
+      console.log("Invalid credentials");
     }
     
   };
 
   const mockAdmin = {
     email: "admin@example.com",
-    password: "admin123",
+    password: "admin",
   };
 
   return (
