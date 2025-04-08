@@ -7,6 +7,11 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  const mockAdmin = {
+    email: "admin@example.com",
+    password: "admin",
+  };
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -22,10 +27,7 @@ function Login() {
     
   };
 
-  const mockAdmin = {
-    email: "admin@example.com",
-    password: "admin",
-  };
+ 
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
