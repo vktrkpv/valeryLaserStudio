@@ -10,10 +10,10 @@ import Login from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
 import ResetPassword from './components/auth/ResetPassword';
 import AdminDashboard from './components/dashboards/AdminDashboard';
+import UserDashboard from './components/dashboards/user/UserDashboard';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ConditionalHeader from './components/ConditionalHeader';
 import Clients from './components/dashboards/ADMIN/Clients';
-import BookingCalendar from './components/dashboards/ADMIN/BookingCalendar';
 
 function AppContent(){
 
@@ -35,9 +35,31 @@ function AppContent(){
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-          <Route path="/admin/clients" element={<ProtectedRoute><Clients /></ProtectedRoute>} />
-          <Route path="/admin/calendar" element={<ProtectedRoute><BookingCalendar /></ProtectedRoute>} />
+
+          <Route 
+          path="/admin/*" 
+          element={
+          <ProtectedRoute requiredRole='admin'>
+            <Routes>
+              <Route
+              path='/' 
+              element={<AdminDashboard/>} />
+
+              <Route
+              path='clients'
+              element={<Clients/>}
+               />
+
+
+            </Routes>
+            </ProtectedRoute>} />
+
+          <Route 
+          path="/client" 
+          element={
+          <ProtectedRoute requiredRole='user'>
+            <UserDashboard/>
+            </ProtectedRoute>} />
         </Routes>
       </div>
 

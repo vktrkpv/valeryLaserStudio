@@ -1,33 +1,38 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const mockAdmin = {
-    email: "admin@example.com",
-    password: "admin",
-  };
-
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if( email === mockAdmin.email && password === mockAdmin.password) {
-      localStorage.setItem("isAdminLoggedIn", "true");
-      navigate('/admin');
-      console.log("Logged in successfully!");
-    }
-    else {
-      alert("Email or password is incorrect");
-      console.log("Invalid credentials");
+    try {
+
+      const userCredential = await signInWithEmailAndPassword( auth, email, password);
+      const user = userCredential.user;
+
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      const userData = userDoc.data();
+
+      if (userData?.role === "admin") {
+        navigate('/admin');
+      } else {
+        navigate('/client'); 
+      }
+    }catch (error) {
+      alert('Invalid email or password');
+      console.error(error);
     }
     
   };
 
- 
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function SignUp(){
 
@@ -7,22 +11,38 @@ function SignUp(){
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const [success, setSuccess] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        if( password !== confirmPassword){
-            setError("Passwords do not match!");
-            return;
+      
+        if (password !== confirmPassword) {
+          setError("Passwords do not match!");
+          return;
         }
+      
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          const user = userCredential.user;
+      
+          await setDoc(doc(db, "users", user.uid), {
+            fullName: fullName,
+            email: email,
+            role: "user" 
+          });
 
-        console.log("Sign Up Data:", { fullName, email, password });
+          setSuccess('Account created successfully! Please log in.');
+          navigate('/login');      
+          setError('');
+        } catch (error) {
+          console.error(error);
+          setError('Failed to create account');
+        }
+      };
 
-        setError('');
-
-    }
-
-        return(
+    
+return(
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
 
             <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
@@ -60,7 +80,8 @@ function SignUp(){
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A2DED0] focus:outline-none"
                     />
 
-                        {error && <p className="text-red-500 text-sm">{error}</p>}
+{success && <p className="text-green-500 text-sm">{success}</p>}
+{error && <p className="text-red-500 text-sm">{error}</p>}
 
                         <button
             type="submit"

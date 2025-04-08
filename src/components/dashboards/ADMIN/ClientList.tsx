@@ -1,4 +1,4 @@
-import { Client } from "./types/types";
+// import { Client } from "./types/types";
 import { Props } from "./types/types";
 
 function ClientList({
